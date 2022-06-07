@@ -1,0 +1,79 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+{% extends './base.html' %}
+{% block custom_css %}<link href="{{ url_for('static', filename='css/user.css') }}" rel="stylesheet">{% endblock %}
+{% block content %}
+<div class="container body-normal-content-div">
+    <div class="form-box-div">
+        <div class="row col-sm-6 mx-auto">
+            <div class="mx-auto content">
+                <h3 class="welcome-text">Please Add Account</h3>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-warning alert-dismissible fade show err-msg" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="user-forms">
+                    <form method="POST" role="form" action="{{ url_for('add_account') }}" novalidate>
+                        {{ form.csrf_token }}
+                        <div class="entry-div">
+                            {{ form.name(class_="form-control form-placeholder", placeholder="Enter Your Name.") }}
+                            {% if form.name.errors %}
+                            <ul>
+                                {% for error in form.name.errors %}
+                                    <li><small class="errors">{{ error }}</small></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        <div class="entry-div">
+                            {{ form.ohr(class_="form-control form-placeholder", placeholder="Enter Your OHR.") }}
+                            {% if form.ohr.errors %}
+                            <ul>
+                                {% for error in form.ohr.errors %}
+                                    <li><small class="errors">{{ error }}</small></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        <div class="entry-div">
+                            {{ form.proc(class_="form-select form-placeholder", placeholder="Choose your current process.") }}
+                        </div>
+                        <div class="entry-div">
+                            {{ form.band(class_="form-select form-placeholder", placeholder="Enter Your Band.") }}
+                        </div>
+                        <div class="entry-div">
+                            {{ form.password(class_="form-control form-placeholder", placeholder="Enter Password.") }}
+                            {% if form.password.errors %}
+                            <ul>
+                                {% for error in form.password.errors %}
+                                    <li><small class="errors">{{ error }}</small></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        <div class="entry-div">
+                            {{ form.confirm_password(class_="form-control form-placeholder", placeholder="Confirm Password") }}
+                            {% if form.confirm_password.errors %}
+                            <ul>
+                                {% for error in form.confirm_password.errors %}
+                                    <li><small class="errors">{{ error }}</small></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        <div class="text-center d-grid gap-2">
+                            {{ form.submit(class="btn btn-secondary my-3 form-button") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

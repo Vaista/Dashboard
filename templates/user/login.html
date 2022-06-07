@@ -1,0 +1,67 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+{% extends './base.html' %}
+{% block custom_css %}<link href="{{ url_for('static', filename='css/user.css') }}" rel="stylesheet">{% endblock %}
+{% block content %}
+<div class="container body-normal-content-div">
+    <div class="form-box-div">
+        <div class="row col-sm-6 mx-auto">
+            <div class="mx-auto content">
+                <h3 class="welcome-text">Please sign in</h3>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-warning alert-dismissible fade show err-msg" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="user-forms">
+                    <form method="POST" role="form" action="{{ url_for('login') }}" novalidate>
+                        {{ form.csrf_token }}
+                        <div class="entry-div">
+                            {{ form.ohr(class_="form-control", placeholder="Enter Your OHR to sign in") }}
+                            {% if form.ohr.errors %}
+                            <ul>
+                                {% for error in form.ohr.errors %}
+                                    <li><small class="errors">{{ error }}</small></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        <div class="entry-div">
+                            {{ form.password(class_="form-control form-placeholder", placeholder="Enter Your Password") }}
+                            {% if form.password.errors %}
+                            <ul>
+                                {% for error in form.password.errors %}
+                                    <li><small class="errors">{{ error }}</small></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        <div class="text-center d-grid gap-2">
+                            {{ form.submit(class="btn btn-secondary my-3 form-button") }}
+                        </div>
+                    </form>
+                    <div class="py-4 err-msg text-muted">
+                        <div class="row">
+                            <div class="col">
+                                <p><u>Manager:</u></p>
+                                <p class="px-4">OHR: 123456789</p>
+                                <p class="px-4">Password: ABCabc@123</p>
+                            </div>
+                            <div class="col">
+                                <p><u>Employee:</u></p>
+                                <p class="px-4">OHR: 987654321</p>
+                                <p class="px-4">Password: ABCabc@123</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

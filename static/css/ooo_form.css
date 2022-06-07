@@ -1,0 +1,132 @@
+/* Background image */
+body {
+    background-image: url('../Images/OOO_form_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Formatting Divs */
+
+.form-box-div {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 5% 0;
+    background-color: #fff;
+    border-radius: 24px;
+    margin-bottom: 7.5%;
+}
+
+.form-welcome-text {
+    padding-bottom: 6%;
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+}
+
+#meeting_date {
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* Form Info Top */
+
+.form-emp-info h5 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 1.32rem;
+}
+
+.form-emp-info span {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    font-size: 1.14rem;
+}
+
+.separator {
+    margin-bottom: 6.5%;
+}
+
+/* Formatting radio buttons */
+
+.radio-div {
+    position: relative;
+    bottom: 12px;
+    padding: 20px 16px;
+    border-radius: 40px;
+    background: linear-gradient(315deg, #cacaca, #f0f0f0);
+    box-shadow:  -9px -9px 17px #a4a4a4, 9px 9px 17px #ffffff;
+}
+
+.form_radio {
+    cursor: pointer;
+    transform: scale(2.4);
+    margin: 0 20px;
+    accent-color: #6c757d;
+}
+
+.radio-start::before {
+    content: "Bad";
+    position: relative;
+    bottom: 32px;
+    right: 3px;
+    font-size: 0.50rem;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+}
+
+.radio-end::before {
+    content: 'Good';
+    position: relative;
+    bottom: 32px;
+    right: 4px;
+    font-size: 0.50rem;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+}
+
+/* Individual Questions */
+
+.question_div {
+    margin-bottom: 4.74%;
+}
+
+.question_div2 {
+    margin-bottom: 6.9%;
+}
+
+.ooo-form-textarea {
+    height: 100px;
+}
+
+#r1-error, #r2-error, #r3-error, #r4-error, #r5-error, #r6-error, #r7-error {
+    float: right;
+    padding-right: 25px !important;
+    font-size: 0.9em;
+}
+
+.ques {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 1.32rem;
+}
+
+.ans {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    font-size: 1.14rem;
+}
+
+.form-ques {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 400;
+    font-size: 1.32rem;
+}

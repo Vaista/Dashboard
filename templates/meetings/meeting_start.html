@@ -1,0 +1,167 @@
+{% extends './base.html' %}
+{% block custom_css %}<link href="{{ url_for('static', filename='css/ooo_form.css') }}" rel="stylesheet">{% endblock %}
+{% block content %}
+<div class="container body-normal-content-div">
+    <div class="form-box-div">
+        <div class="row col-md-11 mx-auto">
+        <form method="POST" role="form" action="{{ url_for('open_meetings') }}" novalidate>
+            {{ form.csrf_token }}
+            <h3 class="form-welcome-text">Hi {{current_user.name}}, please fill out the form.</h3>
+            <div class="input-group mb-4">
+                <p class="ques">Choose a Meeting Date: </p>
+                <input type="date" class="mx-3 mb-5" id="meeting_date" name="meeting_date" required>
+                <small id="date-error" class="errors pt-2"></small>
+            </div>
+            <div class="question_div2">
+                <p> {{ form.q1.label(class_="form-label form-ques") }}
+                    <span class="float-end radio-div">
+                        <input type="radio" class="form_radio radio-start" name="r1" value="1" required>
+                        <input type="radio" class="form_radio" name="r1" value="2">
+                        <input type="radio" class="form_radio" name="r1" value="3">
+                        <input type="radio" class="form_radio" name="r1" value="4">
+                        <input type="radio" class="form_radio radio-end" name="r1" value="5">
+                    </span>
+                    <small class="errors" id="r1-error"></small>
+                </p>
+                {{ form.q1(class_="form-control ooo-form-textarea", placeholder="Enter Your Comments...  (20 to 500 characters)", maxlength="500") }}
+                {% if form.q1.errors %}
+                    <ul>
+                        {% for error in form.q1.errors %}
+                            <li><small class="errors">{{ error }}</small></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="question_div2">
+                <p> {{ form.q2.label(class_="form-label form-ques") }}
+                    <span class="float-end radio-div">
+                        <input type="radio" class="form_radio radio-start" name="r2" value="1" required>
+                        <input type="radio" class="form_radio" name="r2" value="2">
+                        <input type="radio" class="form_radio" name="r2" value="3">
+                        <input type="radio" class="form_radio" name="r2" value="4">
+                        <input type="radio" class="form_radio radio-end" name="r2" value="5">
+                    </span>
+                    <small class="errors" id="r2-error"></small>
+                </p>
+                {{ form.q2(class_="form-control ooo-form-textarea", placeholder="Enter Your Comments...  (20 to 500 characters)", maxlength="500") }}
+                {% if form.q2.errors %}
+                    <ul>
+                        {% for error in form.q2.errors %}
+                            <li><small class="errors">{{ error }}</small></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="question_div2">
+                <p> {{ form.q3.label(class_="form-label form-ques") }}
+                    <span class="float-end radio-div">
+                        <input type="radio" class="form_radio radio-start" name="r3" value="1" required>
+                        <input type="radio" class="form_radio" name="r3" value="2">
+                        <input type="radio" class="form_radio" name="r3" value="3">
+                        <input type="radio" class="form_radio" name="r3" value="4">
+                        <input type="radio" class="form_radio radio-end" name="r3" value="5">
+                    </span>
+                    <small class="errors" id="r3-error"></small>
+                </p>
+                {{ form.q3(class_="form-control ooo-form-textarea", placeholder="Enter Your Comments...  (20 to 500 characters)", maxlength="500") }}
+                {% if form.q3.errors %}
+                    <ul>
+                        {% for error in form.q3.errors %}
+                            <li><small class="errors">{{ error }}</small></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="question_div2">
+                <p> {{ form.q4.label(class_="form-label form-ques") }}
+                    <span class="float-end radio-div">
+                        <input type="radio" class="form_radio radio-start" name="r4" value="1" required>
+                        <input type="radio" class="form_radio" name="r4" value="2">
+                        <input type="radio" class="form_radio" name="r4" value="3">
+                        <input type="radio" class="form_radio" name="r4" value="4">
+                        <input type="radio" class="form_radio radio-end" name="r4" value="5">
+                    </span>
+                    <small class="errors" id="r4-error"></small>
+                </p>
+                {{ form.q4(class_="form-control ooo-form-textarea", placeholder="Enter Your Comments...  (20 to 500 characters)", maxlength="500") }}
+                {% if form.q4.errors %}
+                    <ul>
+                        {% for error in form.q4.errors %}
+                            <li><small class="errors">{{ error }}</small></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="question_div2">
+                <p> {{ form.q5.label(class_="form-label form-ques") }}
+                    <span class="float-end radio-div">
+                        <input type="radio" class="form_radio radio-start" name="r5" value="1" required>
+                        <input type="radio" class="form_radio" name="r5" value="2">
+                        <input type="radio" class="form_radio" name="r5" value="3">
+                        <input type="radio" class="form_radio" name="r5" value="4">
+                        <input type="radio" class="form_radio radio-end" name="r5" value="5">
+                    </span>
+                    <small class="errors" id="r5-error"></small>
+                </p>
+                {{ form.q5(class_="form-control ooo-form-textarea", placeholder="Enter Your Comments...  (20 to 500 characters)", maxlength="500") }}
+                {% if form.q5.errors %}
+                    <ul>
+                        {% for error in form.q5.errors %}
+                            <li><small class="errors">{{ error }}</small></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="question_div2">
+                <p> {{ form.q6.label(class_="form-label form-ques") }}
+                    <span class="float-end radio-div">
+                        <input type="radio" class="form_radio radio-start" name="r6" value="1" required>
+                        <input type="radio" class="form_radio" name="r6" value="2">
+                        <input type="radio" class="form_radio" name="r6" value="3">
+                        <input type="radio" class="form_radio" name="r6" value="4">
+                        <input type="radio" class="form_radio radio-end" name="r6" value="5">
+                    </span>
+                    <small class="errors" id="r6-error"></small>
+                </p>
+                {{ form.q6(class_="form-control ooo-form-textarea", placeholder="Enter Your Comments...  (20 to 500 characters)", maxlength="500") }}
+                {% if form.q6.errors %}
+                    <ul>
+                        {% for error in form.q6.errors %}
+                            <li><small class="errors">{{ error }}</small></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="question_div2">
+                <p> {{ form.q7.label(class_="form-label form-ques") }}
+                    <span class="float-end radio-div">
+                        <input type="radio" class="form_radio radio-start" name="r7" value="1" required>
+                        <input type="radio" class="form_radio" name="r7" value="2">
+                        <input type="radio" class="form_radio" name="r7" value="3">
+                        <input type="radio" class="form_radio" name="r7" value="4">
+                        <input type="radio" class="form_radio radio-end" name="r7" value="5">
+                    </span>
+                    <small class="errors" id="r7-error"></small>
+                </p>
+                {{ form.q7(class_="form-control ooo-form-textarea", placeholder="Enter Your Comments...  (20 to 500 characters)", maxlength="500") }}
+                {% if form.q7.errors %}
+                    <ul>
+                        {% for error in form.q7.errors %}
+                            <li><small class="errors">{{ error }}</small></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="text-center d-grid gap-2">
+                {{ form.submit(class="btn btn-secondary my-4 form-button", id="OOO-form1") }}
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block custom_js %}
+<script src="{{ url_for('static', filename='js/OOO_form_validation.js') }}"></script>
+{% endblock %}

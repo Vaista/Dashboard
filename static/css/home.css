@@ -1,0 +1,72 @@
+/* Transparent Navigation Bar */
+
+.navigation-bar-class {
+    background-color: rgba(255, 255, 255, 0.0) !important;
+}
+
+/* Image */
+
+body {
+    background-image: url("../Images/home_img.jpg");
+    background-position: top-center;
+    background-repeat: no-repeat;
+}
+
+/* Title and Subtitle*/
+
+.heading-container {
+    margin-top: 10%;
+    padding-top: 16px;
+}
+
+.heading-container h1 {
+    letter-spacing: 3px;
+    padding-bottom: 16px;
+}
+
+.heading-container h3 {
+    letter-spacing: 2px;
+    padding-bottom: 26px;
+}
+
+.heading-container a {
+    margin-left: 7px;
+}
+
+/* Fonts */
+
+#heading-title {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    font-size: 2.4em;
+    color: #EFF0EB;
+}
+
+#subheading {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 1.8em;
+    color: #CEDDEB;
+}
+
+/* Buttons */
+
+.home-btn1 {
+    font-family: 'Oxygen', sans-serif;
+    color: #EFF0EB;
+    border-color: #EFF0EB;
+}
+
+.home-btn1:hover {
+    background-color: #EFF0EB;
+}
+
+.home-btn2 {
+    font-family: 'Oxygen', sans-serif;
+    color: #CEDDEB;
+    border-color: #CEDDEB;
+}
+
+.home-btn2:hover {
+    background-color: #CEDDEB;
+}

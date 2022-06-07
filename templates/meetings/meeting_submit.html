@@ -1,0 +1,89 @@
+{% extends './base.html' %}
+{% block custom_css %}<link href="{{ url_for('static', filename='css/ooo_form.css') }}" rel="stylesheet">{% endblock %}
+{% block content %}
+<div class="container body-normal-content-div">
+    <div class="form-box-div">
+        <div class="row col-md-11 mx-auto">
+    <form method="POST" role="form" action="{{ url_for('open_meetings') }}" novalidate>
+        {{ form.csrf_token }}
+        <h2 class="form-welcome-text">One-On-One</h2>
+        <div class="row form-emp-info">
+            <div class="col">
+                <h5 class="d-inline">Employee Name: </h5><span>{{ meeting_data.user.name }}</span>
+            </div>
+            <div class="col text-end">
+                <h5 class="d-inline">Month: </h5><span>{{ meeting_data.current_month }}</span>
+            </div>
+        </div>
+        <div class="row form-emp-info">
+            <div class="col pt-3">
+                <h5 class="d-inline">Employee OHR: </h5><span>{{ meeting_data.user.ohr }}</span>
+            </div>
+        </div>
+        <div class="row mt-4 pt-2 form-emp-info">
+            <div class="col">
+                <h5 class="d-inline">Manager Name: </h5><span>{{ meeting_data.manager_name }}</span>
+            </div>
+            <div class="col text-end">
+                <h5 class="d-inline-block">Requested Meeting Date: </h5><span> {{ meeting_data.requested_meeting_date }}</span>
+            </div>
+        </div>
+        <div class="row pb-2 form-emp-info">
+            <div class="col pt-3">
+                <h5 class="d-inline">Manager OHR: </h5><span>{{ meeting_data.manager_ohr }}</span>
+            </div>
+            <div class="col text-end pt-3">
+                <h5 class="d-inline-block">Actual Meeting Date: </h5><span> {{ meeting_data.accepted_meeting_date }}</span>
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="question_div">
+            <div class="pb-3"><span class="h5 ques">Question: </span><span class="ans">{{ meeting_data.question1 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Score: </span><span class="ans">{{ meeting_data.rating1 }}/5</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Comments: </span><span class="ans">{{ meeting_data.emp_comment1 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Manager's Comments: </span><span class="ans">{{ meeting_data.manager_comment1 }}</span></div>
+        </div>
+        <div class="question_div">
+            <div class="pb-3"><span class="h5 ques">Question: </span><span class="ans">{{ meeting_data.question2 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Score: </span><span class="ans">{{ meeting_data.rating2 }}/5</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Comments: </span><span class="ans">{{ meeting_data.emp_comment2 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Manager's Comments: </span><span class="ans">{{ meeting_data.manager_comment2 }}</span></div>
+        </div>
+        <div class="question_div">
+            <div class="pb-3"><span class="h5 ques">Question: </span><span class="ans">{{ meeting_data.question3 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Score: </span><span class="ans">{{ meeting_data.rating3 }}/5</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Comments: </span><span class="ans">{{ meeting_data.emp_comment3 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Manager's Comments: </span><span class="ans">{{ meeting_data.manager_comment3 }}</span></div>
+        </div>
+        <div class="question_div">
+            <div class="pb-3"><span class="h5 ques">Question: </span><span class="ans">{{ meeting_data.question4 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Score: </span><span class="ans">{{ meeting_data.rating4 }}/5</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Comments: </span><span class="ans">{{ meeting_data.emp_comment4 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Manager's Comments: </span><span class="ans">{{ meeting_data.manager_comment4 }}</span></div>
+        </div>
+        <div class="question_div">
+            <div class="pb-3"><span class="h5 ques">Question: </span><span class="ans">{{ meeting_data.question5 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Score: </span><span class="ans">{{ meeting_data.rating5 }}/5</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Comments: </span><span class="ans">{{ meeting_data.emp_comment5 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Manager's Comments: </span><span class="ans">{{ meeting_data.manager_comment5 }}</span></div>
+        </div>
+        <div class="question_div">
+            <div class="pb-3"><span class="h5 ques">Question: </span><span class="ans">{{ meeting_data.question6 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Score: </span><span class="ans">{{ meeting_data.rating6 }}/5</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Comments: </span><span class="ans">{{ meeting_data.emp_comment6 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Manager's Comments: </span><span class="ans">{{ meeting_data.manager_comment6 }}</span></div>
+        </div>
+        <div class="question_div">
+            <div class="pb-3"><span class="h5 ques">Question: </span><span class="ans">{{ meeting_data.question7 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Score: </span><span class="ans">{{ meeting_data.rating7 }}/5</span></div>
+            <div class="pb-3"><span class="h5 ques">Employee Comments: </span><span class="ans">{{ meeting_data.emp_comment7 }}</span></div>
+            <div class="pb-3"><span class="h5 ques">Manager's Comments: </span><span class="ans">{{ meeting_data.manager_comment7 }}</span></div>
+        </div>
+        <div class="text-center d-grid gap-2">
+            {{ form.submit(class="btn btn-secondary my-4 form-button") }}
+        </div>
+    </form>
+    </div>
+    </div>
+</div>
+{% endblock %}

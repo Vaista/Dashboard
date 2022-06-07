@@ -1,0 +1,64 @@
+{% extends './base.html' %}
+{% block custom_css %}<link href="{{ url_for('static', filename='css/user.css') }}" rel="stylesheet">{% endblock %}
+{% block content %}
+    <div class="container">
+      <div class="d-flex align-items-center">
+          <div class="col-12 col-md-5 mx-auto px-4 ">
+            <div class="container-fluid">
+                <div id="custom_invisible_alert" class="alert alert-danger invisible mt-4 err-msg" role="alert">
+                    Incorrect data was entered. Please check and try again
+                </div>
+                <h2 class="content-heading mb-4 pt-0 pb-4">Change Manager</h2>
+                <form method="post">
+                    <div class="mb-3 form-floating">
+                        <input type="text" class="form-control" id="ohr_entry">
+                        <label for="ohr_entry">Enter the OHR</label>
+                    </div>
+                    <div class="text-center d-grid gap-2"><button type="submit" id="manager_change_start_button" class="btn btn-secondary form-button">View</button></div>
+                </form>
+                <div id="change_manager2" class="container py-5 my-4 mx-auto px-0 invisible">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <th class="h5">EMPLOYEE NAME:  </th>
+                          <td id="result_name"></td>
+                        </tr>
+                        <tr>
+                          <th class="h5">EMPLOYEE'S OHR:  </th>
+                          <td id="result_ohr"></td>
+                        </tr>
+                        <tr>
+                          <th class="h5">BAND STATUS:  </th>
+                          <td id="result_band"></td>
+                        </tr>
+                        <tr>
+                          <th class="h5">CURRENT PROCESS:  </th>
+                          <td id="result_process"></td>
+                        </tr>
+                        <tr>
+                          <th class="h5">CURRENT MANAGER:  </th>
+                          <td id="result_manager_name"></td>
+                        </tr>
+                        <tr>
+                          <th class="h5">MANAGER'S OHR:  </th>
+                          <td id="result_manager_ohr"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <form method="post" id="new_manager_form" role="form" action="{{ url_for('change_manager') }}">
+                        {{ form.csrf_token }}
+                        {{ form.manager_details(class_="form-select") }}
+                        <div class="text-center d-grid gap-2">
+                            {{ form.submit(class="btn btn-secondary my-4 form-button") }}
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_js %}
+<script src="{{ url_for('static', filename='js/change_manager.js') }}"></script>
+{% endblock %}

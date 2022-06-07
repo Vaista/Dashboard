@@ -1,0 +1,32 @@
+/* WELCOME TEXT */
+
+.welcome-text {
+    padding: 4% 0 24px 0;
+    text-align: left;
+    letter-spacing: 2px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.user-forms {
+    padding-top: 4%;
+}
+
+
+.entry-div {
+    margin-bottom: 3%;
+}
+
+tbody th {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 1.18;
+}
+
+tbody td {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+}
+
+.form-select option {
+    font-family: 'Oxygen', sans-serif;
+}

@@ -1,0 +1,106 @@
+/* Main Body */
+
+.dashboard-container-div {
+    position: relative;
+    bottom: 47px;
+}
+
+.file-upload {
+    width: 270px !important;
+}
+
+/* Table Search Button */
+
+.dataTables_filter {
+    float: right;
+}
+
+
+.dataTables_length label {
+    visibility: hidden;
+}
+
+.dataTables_length select {
+    visibility: visible;
+    float: left;
+}
+
+.dataTables_filter label:hover::before {
+    content: 'Search by Name, OHR, Manager Name or Date (format: YYYY-MM-DD)';
+    display: inline-block;
+    position: relative;
+    right: 6px;
+    bottom: 1;
+    margin-top: 4px;
+    background-color: #414a4c;
+    color: white;
+    padding: 0.8em 1.6em;
+    border-radius: 5px;
+    font-size: .70em;
+}
+
+
+/* Dashboard heading buttons */
+
+.dashboard-button {
+    font-family: 'Oxygen', sans-serif;
+}
+
+.table-heading {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.1rem;
+}
+
+table td{
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    font-size: 0.8;
+}
+
+/* Side Navigation */
+
+.side-canvas-button {
+    position: relative;
+    right: 26px;
+    border: 1px solid black;
+    border-radius: 100% 0% 100% 0% / 0% 0% 100% 100%;
+    margin-left: 0;
+    padding: 16px 25px 25px 16px;
+    background-color: #212529;
+    color: #e9ecef;
+}
+
+.offcanvas_links {
+    padding-top: 10px;
+}
+
+.hr_color {
+    color: #3B3B3B;
+}
+
+.list_heading {
+    font-family: 'Oxygen', sans-serif;
+    color: #262626;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.offcanvas-title {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+}
+
+.offcanvas-link-heading-custom {
+    font-family: 'Oxygen', sans-serif;
+}
+
+.offcanvas-link-custom,  {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+}
+
+.dataTables_info {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+}

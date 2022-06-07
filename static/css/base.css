@@ -1,0 +1,54 @@
+/* Navigation Bar */
+
+.navbar {
+    z-index: 999;
+}
+
+
+/* Forms Layout and validation */
+
+.errors {
+    color: #dc3545;
+    font-size: 0.75rem;
+}
+
+.body-normal-content-div {
+    padding-top: 7.5%;
+}
+
+/* Button Layout */
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/* Meeting Search Result */
+
+#search_result a {
+    display: block
+}
+
+/* Fonts */
+
+.navbar-title {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+}
+
+.navbar-link-custom {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+}
+
+.content-heading {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.form-button, .form-placeholder, .err-msg {
+    font-family: 'Oxygen', sans-serif;
+}

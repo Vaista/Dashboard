@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+{% block custom_css %}<link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">{% endblock %}
+{% block content %}
+<div class="container-fluid col-10">
+    <div class="text-end text-light heading-container">
+        <h1 id="heading-title">WELCOME TO THE DASHBOARD</h1>
+        <h3 id="subheading">Got some feedbacks? Sign in!</h3>
+        {% if user_active: %}
+            <a type="button" class="btn btn-lg home-btn1" href="{{ url_for('dashboard', manager='everyone', employee='everyone') }}">Dashboard</a>
+            <a type="button" class="btn  btn-outline-light btn-lg home-btn2" href="{{ url_for('previous_meetings') }}">Open Meetings</a>
+        {% else %}
+            <a type="button" class="btn btn-2 btn-lg home-btn1" href="{{ url_for('login') }}">Sign In</a>
+            <a type="button" class="btn btn-outline-light btn-lg home-btn2" href="{{ url_for('add_account') }}">Add Account</a>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}
+
+
