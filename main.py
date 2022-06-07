@@ -14,7 +14,7 @@ import json
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.urandom(160)
+app.config['SECRET_KEY'] = "dfjsdhg;fdghfg35sd4f6f74gh3dh6f47jk5hj4l6hi4kl674gjn45gd5h4fs6g74dg6j74gu6jl74kh53l453gj468gh7r64tgw3e54g6j4gu6lk4g3hj4fg35h46fg74j"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///appdata.db'
 db = SQLAlchemy(app)
