@@ -13,8 +13,6 @@ import plotly
 import json
 import os
 
-# 'APP_SECRET_KEY' = '24sf645hfgdsa231sdg54j5h4kliu87ohj54f3gbs3d54fw5q4dwq64fe87yt897u9o7il4kfg4uiwhqo564djjrpoerkh578'
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(160)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
