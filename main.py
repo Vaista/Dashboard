@@ -275,7 +275,7 @@ def dashboard():
     if current_user.band == 'Band 5':
         user_ohr = current_user.ohr
         data = pd.read_sql_query(
-            f"SELECT wamtable.id, wamtable.date, wamtable.name, wamtable.'OHR', wamtable.'Band', wamtable.'Grade', wamtable.'Account', wamtable.process_code, wamtable.process_name, wamtable.supervisor_id, wamtable.supervisor_name, wamtable.activity FROM wamtable WHERE wamtable.'Account' = '{account}' AND wamtable.'OHR' = '{user_ohr}' AND wamtable.date BETWEEN '{first_date}' AND '{last_date}' ORDER BY wamtable.supervisor_name ASC",
+            f"""SELECT wamtable.id, wamtable.date, wamtable.name, wamtable.OHR, wamtable.Band, wamtable.Grade, wamtable.Account, wamtable.process_code, wamtable.process_name, wamtable.supervisor_id, wamtable.supervisor_name, wamtable.activity FROM wamtable WHERE wamtable.Account = {account} AND wamtable.OHR = {user_ohr} AND wamtable.date BETWEEN {first_date} AND {last_date} ORDER BY wamtable.supervisor_name ASC""",
             con=db.engine)
         if not data.empty:
             fig = px.bar(data, x=data.date, y=data.activity, color=data.name, title='Per Day Session Time',
