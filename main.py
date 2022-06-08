@@ -138,7 +138,7 @@ def update_wam(file):
     for index, row_data in rows:
         current_date = row_data['Date'].split('/')
         date_cur = date(int(current_date[2]), int(current_date[0]), int(current_date[1]))
-        data = WAMData.query.filter_by(date=date_cur, OHR=row_data.OHR).all()
+        data = db.session.query(WAMData).filter(WAMData.date == date_cur, WAMData.OHR == row_data.OHR).first()
         if not data:
             l_name = row_data['Last Name']
             f_name = row_data['First Name']
