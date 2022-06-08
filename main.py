@@ -136,25 +136,29 @@ def update_wam(file):
     file_data = file_data.fillna(0)
     rows = file_data.iterrows()
     for index, row_data in rows:
-        data = WAMData.query.filter_by(date=row_data.Date, OHR=row_data.OHR).first()
+        current_date = row_data['Date'].split('/')
+        data = WAMData.query.filter_by(date=date(int(current_date[2]), int(current_date[0]), int(current_date[1])), OHR=row_data.OHR).first()
         if not data:
             l_name = row_data['Last Name']
             f_name = row_data['First Name']
-            full_name = f_name + ' ' + l_name
-            data = WAMData(date=datetime.strptime(row_data['Date'], "%m/%d/%Y"), last_name=l_name, first_name=f_name,
-                           name=full_name,
-                           OHR=row_data['OHR'], Band=row_data['Band'], Grade=row_data['Grade'],
-                           combined_vertical=row_data['Combined Vertical'],
-                           vertical=row_data['Vertical'], Account=row_data['Account'],
-                           process_code=row_data['Process Code'],
-                           process_name=row_data['Process Name'], supervisor_id=row_data['Supervisor ID'],
-                           supervisor_name=row_data['Supervisor Name'],
-                           region=row_data['Region'], l2_product=row_data['L2 Product'],
-                           session_Time=row_data['Session Time'],
-                           activity=row_data['Activity'], breaks=row_data['Breaks'],
-                           value_add_breaks=row_data['Value Add Breaks'], idle_time=row_data['Idle Time'])
-            db.session.add(data)
-            db.session.commit()
+            full_name = f'{f_name} {l_name}'
+            try:
+                data = WAMData(date=datetime.strptime(row_data['Date'], "%m/%d/%Y"), last_name=l_name, first_name=f_name,
+                               name=full_name,
+                               OHR=row_data['OHR'], Band=row_data['Band'], Grade=row_data['Grade'],
+                               combined_vertical=row_data['Combined Vertical'],
+                               vertical=row_data['Vertical'], Account=row_data['Account'],
+                               process_code=row_data['Process Code'],
+                               process_name=row_data['Process Name'], supervisor_id=row_data['Supervisor ID'],
+                               supervisor_name=row_data['Supervisor Name'],
+                               region=row_data['Region'], l2_product=row_data['L2 Product'],
+                               session_Time=row_data['Session Time'],
+                               activity=row_data['Activity'], breaks=row_data['Breaks'],
+                               value_add_breaks=row_data['Value Add Breaks'], idle_time=row_data['Idle Time'])
+                db.session.add(data)
+                db.session.commit()
+            except:
+                pass
 
 
 @app.route('/api/get_wam_data')
