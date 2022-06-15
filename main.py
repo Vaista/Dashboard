@@ -184,10 +184,9 @@ def read_wam():
     search = request.args.get('search[value]')
     if search:
         query = query.filter(db.or_(
-            WAMData.date.ilike(f'%{search}%'),
-            WAMData.name.ilike(f'%{search}%'),
-            WAMData.OHR.ilike(f'(%{search}%)'),
-            WAMData.supervisor_name.ilike(f'%{search}%'),
+            WAMData.name.like(f'%{search}%'),
+            WAMData.OHR.like(f'(%{search}%)'),
+            WAMData.supervisor_name.like(f'%{search}%'),
         ))
     total_filtered = query.count()
 
