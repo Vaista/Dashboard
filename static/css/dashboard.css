@@ -26,7 +26,7 @@
 }
 
 .dataTables_filter label:hover::before {
-    content: 'Search by Name, OHR, Manager Name or Date (format: YYYY-MM-DD)';
+    content: 'Search by Employee Name or Manager Name';
     display: inline-block;
     position: relative;
     right: 6px;
