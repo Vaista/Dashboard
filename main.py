@@ -185,7 +185,7 @@ def read_wam():
     if search:
         query = query.filter(db.or_(
             WAMData.name.like(f'%{search}%'),
-            WAMData.OHR.like(f'(%{search}%)'),
+            WAMData.OHR.like(f'(%{str(search)}%)'),
             WAMData.supervisor_name.like(f'%{search}%'),
         ))
     total_filtered = query.count()
